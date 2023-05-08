@@ -23,12 +23,6 @@ export default {
           white: "hsl(0, 0%, 100%)",
         },
       },
-      fontFamily: {
-        ubuntu: ["Ubuntu", "sans-serif"],
-        "ubuntu-regular": ["Ubuntu", "sans-serif"],
-        "ubuntu-medium": ["Ubuntu Medium", "sans-serif"],
-        "ubuntu-bold": ["Ubuntu Bold", "sans-serif"],
-      },
     },
   },
   plugins: [],

@@ -4,7 +4,7 @@ import StepButton from "../Elements/StepButton";
 const AuthLayout = (props) => {
   const { children } = props;
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <div className="bg-sidebar-mobile w-full h-[172px] bg-no-repeat bg-cover flex justify-center space-x-4">
         <StepButton label="1" />
         <StepButton label="2" />
