@@ -1,5 +1,11 @@
+import FirstStep from "./pages/firstStep";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <FirstStep />
+    </>
+  );
 }
 
 export default App;
