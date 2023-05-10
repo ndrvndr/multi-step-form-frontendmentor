@@ -1,9 +1,9 @@
-import FirstStep from "./pages/firstStep";
+import PersonalInfo from "./pages/personalInfo";
 
 function App() {
   return (
     <>
-      <FirstStep />
+      <PersonalInfo />
     </>
   );
 }

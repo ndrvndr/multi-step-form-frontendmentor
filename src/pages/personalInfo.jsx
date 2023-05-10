@@ -2,13 +2,13 @@ import InputForm from "../components/Elements/Input";
 import NavigationButton from "../components/Elements/NavigationButton";
 import AuthLayout from "../components/Layout/AuthLayout";
 
-const FirstStep = () => {
+const PersonalInfo = () => {
   return (
     <AuthLayout>
       <div className="flex flex-col items-center">
         <div className="w-[90%] h-fit bg-neutral-white rounded-xl drop-shadow-sm px-6 py-8 relative -top-16">
           <h1 className="text-2xl font-bold mb-2">Personal info</h1>
-          <p className="leading-7 tracking-wide text-lg text-neutral-cool-gray">
+          <p className="leading-7 tracking-tight text-lg text-neutral-cool-gray">
             Please provide your name, email address, and phone number.
           </p>
           <InputForm
@@ -43,4 +43,4 @@ const FirstStep = () => {
   );
 };
 
-export default FirstStep;
+export default PersonalInfo;
