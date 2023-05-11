@@ -36,6 +36,8 @@ const PersonalInfo = () => {
             label="Next Step"
             bgColor="bg-primary-marine-blue"
             textColor="text-neutral-white"
+            fontStyle="font-normal"
+            path="/plan"
           />
         </div>
       </div>
