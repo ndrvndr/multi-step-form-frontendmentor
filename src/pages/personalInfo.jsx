@@ -1,5 +1,5 @@
-import InputForm from "../components/Elements/Input";
 import NavigationButton from "../components/Elements/NavigationButton";
+import Form from "../components/Fragments/Form";
 import AuthLayout from "../components/Layout/AuthLayout";
 
 const PersonalInfo = () => {
@@ -11,24 +11,7 @@ const PersonalInfo = () => {
           <p className="text-lg leading-7 tracking-tight text-neutral-cool-gray">
             Please provide your name, email address, and phone number.
           </p>
-          <InputForm
-            label="Name"
-            htmlFor="name"
-            type="text"
-            placeholder="e.g. Stephen King"
-          />
-          <InputForm
-            label="Email Address"
-            htmlFor="email"
-            type="email"
-            placeholder="e.g. stephenking@lorem.com"
-          />
-          <InputForm
-            label="Phone Number"
-            htmlFor="number"
-            type="tel"
-            placeholder="e.g. +1 234 567 890"
-          />
+          <Form />
         </div>
 
         <div className="fixed bottom-0 flex h-20 w-full items-center justify-end bg-white px-5">
