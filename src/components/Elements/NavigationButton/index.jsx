@@ -6,7 +6,7 @@ const NavigationButton = (props) => {
   return (
     <Link to={path}>
       <button
-        className={`${bgColor} ${textColor} px-4 py-3 rounded-[4px] ${fontStyle}`}
+        className={`${bgColor} ${textColor} rounded-[4px] px-4 py-3 ${fontStyle}`}
       >
         {label}
       </button>

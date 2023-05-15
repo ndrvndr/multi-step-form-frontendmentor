@@ -5,7 +5,7 @@ import Label from "./label";
 const PlanBox = (props) => {
   const { src, alt, label, price } = props;
   return (
-    <div className="flex">
+    <div className="flex rounded-md border border-solid border-neutral-light-gray p-4">
       <Icon src={src} alt={alt} />
       <Label label={label} price={price} />
     </div>

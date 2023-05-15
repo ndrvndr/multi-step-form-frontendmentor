@@ -6,7 +6,7 @@ const Input = (props) => {
     <input
       type={type}
       placeholder={placeholder}
-      className="border-solid border px-5 py-3 rounded-md outline-none"
+      className="rounded-md border border-solid px-5 py-3 outline-none"
       name={name}
       required
     />

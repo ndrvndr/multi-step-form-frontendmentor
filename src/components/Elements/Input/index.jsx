@@ -5,7 +5,7 @@ import Input from "./Input";
 const InputForm = (props) => {
   const { label, htmlFor, type, placeholder } = props;
   return (
-    <div className="flex flex-col mt-4">
+    <div className="mt-4 flex flex-col">
       <Label label={label} htmlFor={htmlFor} />
       <Input name={name} type={type} placeholder={placeholder} />
     </div>

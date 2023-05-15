@@ -6,9 +6,9 @@ const PersonalInfo = () => {
   return (
     <AuthLayout>
       <div className="flex flex-col items-center">
-        <div className="w-[90%] h-fit bg-neutral-white rounded-xl drop-shadow-sm px-6 py-8 relative -top-16">
-          <h1 className="text-2xl font-bold mb-2">Personal info</h1>
-          <p className="leading-7 tracking-tight text-lg text-neutral-cool-gray">
+        <div className="relative -top-16 h-fit w-[90%] rounded-xl bg-neutral-white px-6 py-8 drop-shadow-sm">
+          <h1 className="mb-2 text-2xl font-bold">Personal info</h1>
+          <p className="text-lg leading-7 tracking-tight text-neutral-cool-gray">
             Please provide your name, email address, and phone number.
           </p>
           <InputForm
@@ -31,7 +31,7 @@ const PersonalInfo = () => {
           />
         </div>
 
-        <div className="w-full h-20 bg-white fixed bottom-0 px-5 flex items-center justify-end">
+        <div className="fixed bottom-0 flex h-20 w-full items-center justify-end bg-white px-5">
           <NavigationButton
             label="Next Step"
             bgColor="bg-primary-marine-blue"
