@@ -1,14 +1,22 @@
 import * as React from "react";
 import { Switch } from "@headlessui/react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
-const ToggleButton = () => {
+const ToggleButton = (props) => {
+  const { handleToggle } = props;
   const [enabled, setEnabled] = React.useState(false);
+
+  React.useEffect(() => {
+    handleToggle(enabled);
+  }, [handleToggle, enabled]);
+
   return (
     <div className="mt-6 flex items-center justify-center rounded-md bg-neutral-magnolia py-3">
       <span
         className={`${
-          enabled ? "font-normal" : "font-semibold"
+          enabled
+            ? "font-normal text-neutral-cool-gray"
+            : "font-semibold text-primary-marine-blue"
         } w-16 text-right`}
       >
         Monthly
@@ -27,7 +35,9 @@ const ToggleButton = () => {
       </Switch>
       <span
         className={`${
-          enabled ? "font-semibold" : "font-normal"
+          enabled
+            ? "font-semibold text-primary-marine-blue"
+            : "font-normal text-neutral-cool-gray"
         } w-16 text-left`}
       >
         Yearly
@@ -36,6 +46,6 @@ const ToggleButton = () => {
   );
 };
 
-ToggleButton.propTypes = {};
+ToggleButton.propTypes = { handleToggle: PropTypes.func.isRequired };
 
 export default ToggleButton;

@@ -5,7 +5,7 @@ const AuthLayout = (props) => {
   const { children } = props;
   return (
     <div className="flex flex-col items-center">
-      <div className="fixed flex h-[172px] w-full justify-center space-x-4 bg-sidebar-mobile bg-cover bg-no-repeat">
+      <div className="flex h-[172px] w-full justify-center space-x-4 bg-sidebar-mobile bg-cover bg-no-repeat">
         <StepButton label="1" />
         <StepButton label="2" />
         <StepButton label="3" />
