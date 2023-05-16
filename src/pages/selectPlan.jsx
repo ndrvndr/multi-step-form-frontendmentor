@@ -37,6 +37,7 @@ const SelectPlan = () => {
             bgColor="bg-primary-marine-blue"
             textColor="text-neutral-white"
             fontStyle="font-normal"
+            path="/plan/addons"
           />
         </div>
       </div>
