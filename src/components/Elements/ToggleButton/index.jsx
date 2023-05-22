@@ -4,11 +4,22 @@ import PropTypes from "prop-types";
 
 const ToggleButton = (props) => {
   const { handleToggle } = props;
-  const [enabled, setEnabled] = React.useState(false);
+  const [enabled, setEnabled] = React.useState(
+    localStorage.getItem("enabled") === "true"
+  );
 
   React.useEffect(() => {
     handleToggle(enabled);
+    localStorage.setItem("enabled", enabled);
   }, [handleToggle, enabled]);
+
+  const toggleEnabled = () => {
+    setEnabled((prevEnabled) => {
+      const newEnabled = !prevEnabled;
+      localStorage.setItem("enabled", newEnabled);
+      return newEnabled;
+    });
+  };
 
   return (
     <div className="mt-6 flex items-center justify-center rounded-md bg-neutral-magnolia py-3">
@@ -23,7 +34,7 @@ const ToggleButton = (props) => {
       </span>
       <Switch
         checked={enabled}
-        onChange={setEnabled}
+        onChange={toggleEnabled}
         className="relative mx-5 inline-flex h-6 w-[44px] shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary-marine-blue px-1 transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
       >
         <span className="sr-only">Use setting</span>
