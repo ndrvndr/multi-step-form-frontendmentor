@@ -1,6 +1,6 @@
 import AuthLayout from "../components/Layout/AuthLayout";
 import NavigationButton from "../components/Elements/NavigationButton";
-import Checkbox from "../components/Elements/Checkbox";
+import Checkboxes from "../components/Fragments/Checkboxes";
 
 const Addons = () => {
   return (
@@ -8,10 +8,10 @@ const Addons = () => {
       <div className="flex flex-col items-center">
         <div className="relative -top-16 h-fit w-[90%] rounded-xl bg-neutral-white px-6 py-8 drop-shadow-sm">
           <h1 className="mb-2 text-2xl font-bold">Pick add-ons</h1>
-          <p className="mb-6 text-lg leading-7 tracking-tight text-neutral-cool-gray">
+          <p className="mb-5 text-lg leading-7 tracking-tight text-neutral-cool-gray">
             Add-ons help enhance your gaming experience.
           </p>
-          <Checkbox />
+          <Checkboxes />
         </div>
         <div className="fixed bottom-0 flex h-20 w-full items-center justify-between bg-white px-5">
           <NavigationButton
