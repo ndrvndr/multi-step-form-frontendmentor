@@ -1,7 +1,8 @@
 import Checkbox from "../Elements/Checkbox";
-import PropTypes from "prop-types";
 
-const Checkboxes = ({ enabled }) => {
+const Checkboxes = () => {
+  const enabled = JSON.parse(localStorage.getItem("Enabled"));
+
   return (
     <div className="space-y-4">
       <Checkbox
@@ -22,7 +23,5 @@ const Checkboxes = ({ enabled }) => {
     </div>
   );
 };
-
-Checkboxes.propTypes = { enabled: PropTypes.bool.isRequired };
 
 export default Checkboxes;

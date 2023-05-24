@@ -3,8 +3,6 @@ import NavigationButton from "../components/Elements/NavigationButton";
 import Checkboxes from "../components/Fragments/Checkboxes";
 
 const Addons = () => {
-  const enabled = JSON.parse(localStorage.getItem("Enabled"));
-
   return (
     <AuthLayout>
       <div className="flex flex-col items-center">
@@ -15,7 +13,7 @@ const Addons = () => {
           <p className="mb-5 text-lg leading-7 tracking-tight text-neutral-cool-gray">
             Add-ons help enhance your gaming experience.
           </p>
-          <Checkboxes enabled={enabled} />
+          <Checkboxes />
         </div>
         <div className="fixed bottom-0 flex h-20 w-full items-center justify-between bg-white px-5">
           <NavigationButton
