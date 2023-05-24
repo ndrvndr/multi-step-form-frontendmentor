@@ -1,6 +1,5 @@
-import PropTypes from "prop-types";
-
-const SelectedAddOns = ({ enabled }) => {
+const SelectedAddOns = () => {
+  const enabled = JSON.parse(localStorage.getItem("Enabled"));
   return (
     <>
       <div className="mb-2 flex w-full justify-between">
@@ -18,7 +17,5 @@ const SelectedAddOns = ({ enabled }) => {
     </>
   );
 };
-
-SelectedAddOns.propTypes = { enabled: PropTypes.bool.isRequired };
 
 export default SelectedAddOns;

@@ -5,18 +5,18 @@ import PropTypes from "prop-types";
 const ToggleButton = (props) => {
   const { handleToggle } = props;
   const [enabled, setEnabled] = React.useState(
-    localStorage.getItem("enabled") === "true"
+    localStorage.getItem("Enabled") === "true"
   );
 
   React.useEffect(() => {
     handleToggle(enabled);
-    localStorage.setItem("enabled", enabled);
+    localStorage.setItem("Enabled", enabled);
   }, [handleToggle, enabled]);
 
   const toggleEnabled = () => {
     setEnabled((prevEnabled) => {
       const newEnabled = !prevEnabled;
-      localStorage.setItem("enabled", newEnabled);
+      localStorage.setItem("Enabled", newEnabled);
       return newEnabled;
     });
   };

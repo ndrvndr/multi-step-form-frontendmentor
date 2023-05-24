@@ -20,6 +20,48 @@ const PlanBoxes = (props) => {
       pro: plan === "pro",
     });
   };
+
+  React.useEffect(() => {
+    const storedPlanType = localStorage.getItem("PlanType");
+    const storedPrice = localStorage.getItem("Price");
+
+    if (storedPlanType && storedPrice) {
+      setIsClicked({
+        arcade: storedPlanType === "Arcade",
+        advanced: storedPlanType === "Advanced",
+        pro: storedPlanType === "Pro",
+      });
+    }
+  }, []);
+
+  React.useEffect(() => {
+    localStorage.setItem(
+      "PlanType",
+      isClicked.arcade
+        ? "Arcade"
+        : isClicked.advanced
+        ? "Advanced"
+        : isClicked.pro
+        ? "Pro"
+        : ""
+    );
+    localStorage.setItem(
+      "Price",
+      isClicked.arcade
+        ? enabled
+          ? 90
+          : 9
+        : isClicked.advanced
+        ? enabled
+          ? 120
+          : 12
+        : isClicked.pro
+        ? enabled
+          ? 150
+          : 15
+        : ""
+    );
+  }, [isClicked, enabled]);
   return (
     <div className="space-y-3">
       <PlanBox

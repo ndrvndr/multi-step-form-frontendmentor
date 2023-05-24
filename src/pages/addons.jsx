@@ -3,7 +3,7 @@ import NavigationButton from "../components/Elements/NavigationButton";
 import Checkboxes from "../components/Fragments/Checkboxes";
 
 const Addons = () => {
-  const enabled = JSON.parse(localStorage.getItem("enabled"));
+  const enabled = JSON.parse(localStorage.getItem("Enabled"));
 
   return (
     <AuthLayout>

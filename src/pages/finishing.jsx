@@ -3,7 +3,8 @@ import NavigationButton from "../components/Elements/NavigationButton";
 import Details from "../components/Fragments/Details";
 
 const Finishing = () => {
-  const enabled = JSON.parse(localStorage.getItem("enabled"));
+  const enabled = JSON.parse(localStorage.getItem("Enabled"));
+  const price = JSON.parse(localStorage.getItem("Price"));
 
   return (
     <AuthLayout>
@@ -15,13 +16,13 @@ const Finishing = () => {
           <p className="mb-5 text-lg leading-7 tracking-tight text-neutral-cool-gray">
             Double-check everything looks OK before confirming
           </p>
-          <Details enabled={enabled} />
+          <Details />
           <div className="mt-2 flex items-center justify-between rounded-md bg-neutral-white px-4 pt-4">
             <span className="text-neutral-cool-gray">
               Total {enabled ? "(per year)" : "(per month)"}
             </span>
             <span className="font-bold text-primary-purplish-blue">
-              +$12/{enabled ? "yr" : "mo"}
+              +${price}/{enabled ? "yr" : "mo"}
             </span>
           </div>
         </div>

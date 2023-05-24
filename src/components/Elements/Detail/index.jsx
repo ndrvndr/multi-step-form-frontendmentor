@@ -1,17 +1,14 @@
-import PropTypes from "prop-types";
 import SelectedPlan from "./selectedPlan";
 import SelectedAddOns from "./SelectedAddOns";
 
-const Detail = ({ enabled }) => {
+const Detail = () => {
   return (
     <>
-      <SelectedPlan enabled={enabled} />
+      <SelectedPlan />
       <hr className="my-3 w-full" />
-      <SelectedAddOns enabled={enabled} />
+      <SelectedAddOns />
     </>
   );
 };
-
-Detail.propTypes = { enabled: PropTypes.bool.isRequired };
 
 export default Detail;
