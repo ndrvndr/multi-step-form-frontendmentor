@@ -4,8 +4,7 @@ import Details from "../components/Fragments/Details";
 
 const Finishing = () => {
   const enabled = JSON.parse(localStorage.getItem("Enabled"));
-  const price = JSON.parse(localStorage.getItem("Price"));
-
+  const plan = JSON.parse(localStorage.getItem("Plan"));
   return (
     <AuthLayout>
       <div className="flex flex-col items-center">
@@ -22,7 +21,7 @@ const Finishing = () => {
               Total {enabled ? "(per year)" : "(per month)"}
             </span>
             <span className="font-bold text-primary-purplish-blue">
-              +${price}/{enabled ? "yr" : "mo"}
+              +${plan.Price}/{enabled ? "yr" : "mo"}
             </span>
           </div>
         </div>

@@ -7,10 +7,22 @@ import IconPro from "../../assets/images/icon-pro.svg";
 
 const PlanBoxes = (props) => {
   const { enabled } = props;
-  const [isClicked, setIsClicked] = React.useState({
-    arcade: false,
-    advanced: false,
-    pro: false,
+  const [isClicked, setIsClicked] = React.useState(() => {
+    const storedPlan = localStorage.getItem("Plan");
+    if (storedPlan) {
+      const parsedPlan = JSON.parse(storedPlan);
+      return {
+        arcade: parsedPlan.PlanType === "Arcade",
+        advanced: parsedPlan.PlanType === "Advanced",
+        pro: parsedPlan.PlanType === "Pro",
+      };
+    } else {
+      return {
+        arcade: false,
+        advanced: false,
+        pro: false,
+      };
+    }
   });
 
   const handleClick = (plan) => {
@@ -22,32 +34,15 @@ const PlanBoxes = (props) => {
   };
 
   React.useEffect(() => {
-    const storedPlanType = localStorage.getItem("PlanType");
-    const storedPrice = localStorage.getItem("Price");
-
-    if (storedPlanType && storedPrice) {
-      setIsClicked({
-        arcade: storedPlanType === "Arcade",
-        advanced: storedPlanType === "Advanced",
-        pro: storedPlanType === "Pro",
-      });
-    }
-  }, []);
-
-  React.useEffect(() => {
-    localStorage.setItem(
-      "PlanType",
-      isClicked.arcade
+    const plan = {
+      PlanType: isClicked.arcade
         ? "Arcade"
         : isClicked.advanced
         ? "Advanced"
         : isClicked.pro
         ? "Pro"
-        : ""
-    );
-    localStorage.setItem(
-      "Price",
-      isClicked.arcade
+        : "",
+      Price: isClicked.arcade
         ? enabled
           ? 90
           : 9
@@ -59,8 +54,10 @@ const PlanBoxes = (props) => {
         ? enabled
           ? 150
           : 15
-        : ""
-    );
+        : "",
+    };
+
+    localStorage.setItem("Plan", JSON.stringify(plan));
   }, [isClicked, enabled]);
   return (
     <div className="space-y-3">
