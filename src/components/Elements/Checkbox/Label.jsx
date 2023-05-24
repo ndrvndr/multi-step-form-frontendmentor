@@ -4,7 +4,9 @@ const Label = (props) => {
   const { firstLabel, secondLabel } = props;
   return (
     <label htmlFor="" className="flex flex-col">
-      <span className="mb-1 text-sm font-semibold">{firstLabel}</span>
+      <span className="mb-1 text-sm font-semibold text-primary-marine-blue">
+        {firstLabel}
+      </span>
       <span className="text-xs text-neutral-cool-gray">{secondLabel}</span>
     </label>
   );

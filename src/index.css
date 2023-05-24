@@ -138,3 +138,7 @@ body {
   background-color: hsl(217, 100%, 97%);
   font-family: "Ubuntu", sans-serif;
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}

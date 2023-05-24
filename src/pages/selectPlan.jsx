@@ -14,7 +14,9 @@ const SelectPlan = () => {
     <AuthLayout>
       <div className="relative -top-16 mb-10 flex w-fit flex-col items-center">
         <div className="h-fit w-[90%] rounded-xl bg-neutral-white px-6 py-8 drop-shadow-sm">
-          <h1 className="mb-2 text-2xl font-bold">Select your plan</h1>
+          <h1 className="mb-2 text-2xl font-bold text-primary-marine-blue">
+            Select your plan
+          </h1>
           <p className="mb-4 text-lg leading-7 tracking-tight text-neutral-cool-gray">
             You have the option of monthly or yearly billing.
           </p>

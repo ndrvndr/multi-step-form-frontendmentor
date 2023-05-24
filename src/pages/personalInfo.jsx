@@ -7,7 +7,9 @@ const PersonalInfo = () => {
     <AuthLayout>
       <div className="flex flex-col items-center">
         <div className="relative -top-16 h-fit w-[90%] rounded-xl bg-neutral-white px-6 py-8 drop-shadow-sm">
-          <h1 className="mb-2 text-2xl font-bold">Personal info</h1>
+          <h1 className="mb-2 text-2xl font-bold text-primary-marine-blue">
+            Personal info
+          </h1>
           <p className="text-lg leading-7 tracking-tight text-neutral-cool-gray">
             Please provide your name, email address, and phone number.
           </p>

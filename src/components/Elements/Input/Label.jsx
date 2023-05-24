@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const Label = (props) => {
   const { label, htmlFor } = props;
   return (
-    <label className="text-sm" htmlFor={htmlFor}>
+    <label className="text-sm text-primary-marine-blue" htmlFor={htmlFor}>
       {label}
     </label>
   );
