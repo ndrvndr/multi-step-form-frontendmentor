@@ -1,8 +1,10 @@
 import AuthLayout from "../components/Layout/AuthLayout";
 import NavigationButton from "../components/Elements/NavigationButton";
-import { Link } from "react-router-dom";
+import Details from "../components/Fragments/Details";
 
 const Finishing = () => {
+  const enabled = JSON.parse(localStorage.getItem("enabled"));
+
   return (
     <AuthLayout>
       <div className="flex flex-col items-center">
@@ -13,19 +15,13 @@ const Finishing = () => {
           <p className="mb-5 text-lg leading-7 tracking-tight text-neutral-cool-gray">
             Double-check everything looks OK before confirming
           </p>
-          <div className="flex items-center justify-between rounded-md bg-neutral-magnolia p-4">
-            <div className="flex flex-col">
-              <span className="mb-1 font-medium text-primary-marine-blue">
-                Arcade(Monthly)
-              </span>
-              <Link to="/plan">
-                <span className="text-sm text-neutral-cool-gray underline">
-                  Change
-                </span>
-              </Link>
-            </div>
-            <span className="text-sm font-bold text-primary-marine-blue">
-              $9/mo
+          <Details enabled={enabled} />
+          <div className="mt-2 flex items-center justify-between rounded-md bg-neutral-white px-4 pt-4">
+            <span className="text-neutral-cool-gray">
+              Total {enabled ? "(per year)" : "(per month)"}
+            </span>
+            <span className="font-bold text-primary-purplish-blue">
+              +$12/{enabled ? "yr" : "mo"}
             </span>
           </div>
         </div>
@@ -38,8 +34,8 @@ const Finishing = () => {
             path="/plan/addons"
           />
           <NavigationButton
-            label="Next Step"
-            bgColor="bg-primary-marine-blue"
+            label="Confirm"
+            bgColor="bg-primary-purplish-blue"
             textColor="text-neutral-white"
             fontStyle="font-normal"
             path="/plan/addons/finishing"
