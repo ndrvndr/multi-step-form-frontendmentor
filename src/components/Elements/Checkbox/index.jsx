@@ -8,6 +8,16 @@ const Checkbox = (props) => {
   const { firstLabel, secondLabel, price } = props;
 
   const [isClicked, setIsClicked] = React.useState(false);
+
+  React.useEffect(() => {
+    const storedData = localStorage.getItem("checkboxData");
+    if (storedData) {
+      const checkboxData = JSON.parse(storedData);
+      const key = `${firstLabel}`;
+      setIsClicked(key in checkboxData);
+    }
+  }, [firstLabel]);
+
   const handleClick = () => {
     setIsClicked(!isClicked);
 

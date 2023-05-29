@@ -11,7 +11,7 @@ const Input = ({ isClicked, handleClick }) => {
           : "border-neutral-light-gray bg-neutral-white"
       }`}
     >
-      <img src={IconCheckmark} alt='Icon Checkmark' />
+      {isClicked && <img src={IconCheckmark} alt='Icon Checkmark' />}
     </div>
   );
 };
