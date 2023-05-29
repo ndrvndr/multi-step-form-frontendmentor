@@ -1,5 +1,4 @@
 import AuthLayout from "../components/Layout/AuthLayout";
-import NavigationButton from "../components/Elements/NavigationButton";
 import IconThankYou from "../assets/images/Icon-thank-you.svg";
 
 const Succeed = () => {
@@ -16,22 +15,6 @@ const Succeed = () => {
             our platform. If you ever need support, please feel free to email us
             at support@loremgaming.com
           </p>
-        </div>
-        <div className='fixed bottom-0 flex h-20 w-full items-center justify-between bg-white px-5'>
-          <NavigationButton
-            label='Go Back'
-            bgColor='bg-neutral-white'
-            textColor='text-neutral-cool-gray'
-            fontStyle='font-medium'
-            path='/plan/addons/finishing'
-          />
-          <NavigationButton
-            label='Confirm'
-            bgColor='bg-primary-purplish-blue'
-            textColor='text-neutral-white'
-            fontStyle='font-normal'
-            path='/plan/addons/finishing/succeed'
-          />
         </div>
       </div>
     </AuthLayout>
