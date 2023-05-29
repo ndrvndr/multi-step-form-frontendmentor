@@ -1,8 +1,8 @@
+import PropTypes from "prop-types";
+import * as React from "react";
 import Input from "./Input";
 import Label from "./Label";
 import Price from "./Price";
-import PropTypes from "prop-types";
-import * as React from "react";
 
 const Checkbox = (props) => {
   const { firstLabel, secondLabel, price } = props;
@@ -10,6 +10,25 @@ const Checkbox = (props) => {
   const [isClicked, setIsClicked] = React.useState(false);
   const handleClick = () => {
     setIsClicked(!isClicked);
+
+    const storedData = localStorage.getItem("checkboxData");
+    let checkboxData = {};
+
+    if (storedData) {
+      checkboxData = JSON.parse(storedData);
+    }
+
+    const key = `${firstLabel}-${price}`;
+    if (isClicked) {
+      delete checkboxData[key];
+    } else {
+      checkboxData[key] = {
+        firstLabel: firstLabel,
+        price: price,
+      };
+    }
+
+    localStorage.setItem("checkboxData", JSON.stringify(checkboxData));
   };
 
   return (
@@ -21,7 +40,7 @@ const Checkbox = (props) => {
           : "border-neutral-light-gray bg-neutral-white"
       } flex cursor-pointer justify-between rounded-lg border border-solid  px-4 py-3 hover:border-primary-marine-blue hover:bg-neutral-magnolia`}
     >
-      <div className="flex">
+      <div className='flex'>
         <Input isClicked={isClicked} handleClick={handleClick} />
         <Label firstLabel={firstLabel} secondLabel={secondLabel} />
       </div>
@@ -34,7 +53,7 @@ const Checkbox = (props) => {
 Checkbox.propTypes = {
   firstLabel: PropTypes.string.isRequired,
   secondLabel: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
 };
 
 export default Checkbox;
