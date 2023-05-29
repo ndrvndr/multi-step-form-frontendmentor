@@ -18,7 +18,7 @@ const Checkbox = (props) => {
       checkboxData = JSON.parse(storedData);
     }
 
-    const key = `${firstLabel}-${price}`;
+    const key = `${firstLabel}`;
     if (isClicked) {
       delete checkboxData[key];
     } else {

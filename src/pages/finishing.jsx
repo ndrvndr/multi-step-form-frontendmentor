@@ -53,7 +53,7 @@ const Finishing = () => {
             bgColor='bg-primary-purplish-blue'
             textColor='text-neutral-white'
             fontStyle='font-normal'
-            path='/plan/addons/finishing'
+            path='/plan/addons/finishing/succeed'
           />
         </div>
       </div>

@@ -7,6 +7,7 @@ import PersonalInfo from "./pages/personalInfo.jsx";
 import Addons from "./pages/addons";
 import ErrorPage from "./pages/404";
 import Finishing from "./pages/finishing";
+import Succeed from "./pages/succeed";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
   },
   { path: "/plan/addons", element: <Addons /> },
   { path: "/plan/addons/finishing", element: <Finishing /> },
+  { path: "/plan/addons/finishing/succeed", element: <Succeed /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
